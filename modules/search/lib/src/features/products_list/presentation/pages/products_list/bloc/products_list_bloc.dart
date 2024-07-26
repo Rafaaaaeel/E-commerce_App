@@ -1,4 +1,4 @@
-import '../../../domain/usecases/products_list_usecase.dart';
+import '../../../../domain/usecases/products_list_usecase.dart';
 import 'products_list_event.dart';
 import 'products_list_state.dart';
 
