@@ -15,6 +15,6 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ModuleRoute('/', module: SearchModule()),
+        ModuleRoute('/search', module: SearchModule()),
       ];
 }

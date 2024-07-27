@@ -17,6 +17,7 @@ Settings get _settings {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Modular.setInitialRoute('/search');
   runApp(
     ModularApp(
       module: AppModule(_settings),

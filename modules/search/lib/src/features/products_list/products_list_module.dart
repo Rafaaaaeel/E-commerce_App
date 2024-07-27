@@ -1,9 +1,9 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'data/repositories/products_list_repository_impl.dart';
-import 'data/sources/channel/products_channel.dart';
-import 'data/sources/datasource/remote/products_list_channel_datasource.dart';
-import 'data/sources/datasource/local/products_list_local_datasource.dart';
+import 'data/sources/remote/channel/products_channel.dart';
+import 'data/sources/remote/datasource/remote/products_list_channel_datasource.dart';
+import 'data/sources/remote/datasource/local/products_list_local_datasource.dart';
 import 'domain/repositories/products_list_repository.dart';
 import 'domain/usecases/products_list_usecase.dart';
 import 'presentation/pages/products_list/bloc/products_list_bloc.dart';

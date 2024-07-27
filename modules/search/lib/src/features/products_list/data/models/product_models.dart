@@ -4,16 +4,16 @@ class ProductModel extends ProductEntity {
   const ProductModel(
     super.name,
     super.price,
-    super.discountPercentage,
     super.historyPrice,
+    super.discountPercentage,
   );
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
       json["name"],
       json["price"],
-      json["discountPercentage"],
-      json["historyPrice)"],
+      json["historyPrice"],
+      json["discountPercengate"],
     );
   }
 }
