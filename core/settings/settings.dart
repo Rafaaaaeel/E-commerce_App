@@ -25,3 +25,20 @@ class ProdSettings extends Settings {
   @override
   String get repository => "prod";
 }
+
+enum Enviroment {
+  mock,
+  dev,
+  release;
+
+  static Enviroment fromString(String s) {
+    switch (s.toLowerCase()) {
+      case 'mock':
+        return Enviroment.mock;
+      case 'dev':
+        return Enviroment.dev;
+      default:
+        return Enviroment.release;
+    }
+  }
+}

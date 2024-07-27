@@ -1,15 +1,20 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../core/settings/settings.dart';
-import 'app_widget.dart';
+import '../modules/search/search_module.dart';
 
-class AppModule {
-  final AppWidget _widget;
+class AppModule extends Module {
   final Settings _settings;
 
-  AppModule(this._settings, this._widget);
+  AppModule(this._settings);
 
-  Future<void> run() async {
-    runApp(_widget);
-  }
+  @override
+  List<Bind> get binds => [
+        Bind.singleton((i) => _settings),
+      ];
+
+  @override
+  List<ModularRoute> get routes => [
+        ModuleRoute('/', module: SearchModule()),
+      ];
 }
