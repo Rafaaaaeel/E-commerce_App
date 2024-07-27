@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 
 import '../../../../../../../../../../core/network/failure.dart';
 import '../../../models/products_list_models.dart';
-import 'products_list_datasource.dart';
+import '../products_list_datasource.dart';
 
 class ProductsListLocalDatasource implements ProductsListDatasource {
   @override
