@@ -31,39 +31,40 @@ class _ProductsListPageState extends State<ProductsListPage> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsListBloc, ProductsListState>(
-        bloc: _bloc,
-        builder: (_, state) {
-          if (state is SuccessFetchingProductsListState) {
-            return Scaffold(
-              body: Center(
-                child: Text(
-                  state.productsList.productsList[0].name,
-                ),
-              ),
-            );
-          }
-
-          if (state is LoadingProductsListState) {
-            return const Scaffold(
-              body: Center(
-                child: Text('loading'),
-              ),
-            );
-          }
-
-          if (state is FailedFetchingProductsListState) {
-            return const Scaffold(
-              body: Center(
-                child: Text('Failure'),
-              ),
-            );
-          }
-
-          return const Scaffold(
+      bloc: _bloc,
+      builder: (_, state) {
+        if (state is SuccessFetchingProductsListState) {
+          return Scaffold(
             body: Center(
-              child: Text('sem status'),
+              child: Text(
+                state.productsList.productsList[0].name,
+              ),
             ),
           );
-        });
+        }
+
+        if (state is LoadingProductsListState) {
+          return const Scaffold(
+            body: Center(
+              child: Text('loading'),
+            ),
+          );
+        }
+
+        if (state is FailedFetchingProductsListState) {
+          return const Scaffold(
+            body: Center(
+              child: Text('Failure'),
+            ),
+          );
+        }
+
+        return const Scaffold(
+          body: Center(
+            child: Text('sem status'),
+          ),
+        );
+      },
+    );
   }
 }
