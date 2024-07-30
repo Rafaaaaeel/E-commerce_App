@@ -42,13 +42,14 @@ dependencies:
   # Handle Success/Error State From Data Source
   dartz: ^0.10.1
 
-  # Dependency Injection
-  get_it: ^7.6.4
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   flutter_modular: ^5.0.3
+
+  freezed_annotation: ^2.4.1
+  freezed: ^2.5.2
+  build_runner: ^2.4.11
 
 dev_dependencies:
   

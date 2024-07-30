@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'bloc/products_list_bloc.dart';
-import 'bloc/products_list_event.dart';
 import 'bloc/products_list_state.dart';
 
 class ProductsListPage extends StatefulWidget {
@@ -19,8 +18,6 @@ class _ProductsListPageState extends State<ProductsListPage> {
   @override
   void initState() {
     super.initState();
-
-    _bloc.add(OnFetchingProductsListEvent());
   }
 
   @override
@@ -30,41 +27,35 @@ class _ProductsListPageState extends State<ProductsListPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProductsListBloc, ProductsListState>(
-      bloc: _bloc,
-      builder: (_, state) {
-        if (state is SuccessFetchingProductsListState) {
-          return Scaffold(
-            body: Center(
+    return Scaffold(
+      body: BlocBuilder<ProductsListBloc, ProductsListState>(
+        bloc: _bloc,
+        builder: (_, state) {
+          if (state is SuccessFetchingProductsListState) {
+            return Center(
               child: Text(
                 state.productsList.productsList[0].name,
               ),
-            ),
-          );
-        }
+            );
+          }
 
-        if (state is LoadingProductsListState) {
-          return const Scaffold(
-            body: Center(
+          if (state is LoadingProductsListState) {
+            return const Center(
               child: Text('loading'),
-            ),
-          );
-        }
+            );
+          }
 
-        if (state is FailedFetchingProductsListState) {
-          return const Scaffold(
-            body: Center(
+          if (state is FailedFetchingProductsListState) {
+            return const Center(
               child: Text('Failure'),
-            ),
-          );
-        }
+            );
+          }
 
-        return const Scaffold(
-          body: Center(
+          return const Center(
             child: Text('sem status'),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }
