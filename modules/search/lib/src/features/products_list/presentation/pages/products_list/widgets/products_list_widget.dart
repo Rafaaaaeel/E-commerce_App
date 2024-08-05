@@ -10,6 +10,17 @@ class ProductsListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ProductCardWidget(productsList.productsList.first);
+    return GridView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        mainAxisExtent: 150,
+      ),
+      padding: const EdgeInsets.all(16),
+      itemBuilder: (context, index) =>
+          ProductCardWidget(productsList.productsList[0]),
+    );
   }
 }

@@ -1,3 +1,3 @@
 abstract class ProductsListEvent {}
 
-class OnFetchingProductsListEvent extends ProductsListEvent {}
+class FetchroductsListEvent extends ProductsListEvent {}

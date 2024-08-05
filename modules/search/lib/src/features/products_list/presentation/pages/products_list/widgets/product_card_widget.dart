@@ -9,6 +9,18 @@ class ProductCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('data');
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.red,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: SizedBox(
+        width: 100,
+        height: 100,
+        child: Center(
+          child: Text(product.name),
+        ),
+      ),
+    );
   }
 }

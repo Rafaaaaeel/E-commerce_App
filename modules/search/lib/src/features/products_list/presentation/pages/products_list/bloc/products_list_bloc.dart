@@ -9,10 +9,10 @@ class ProductsListBloc extends Bloc<ProductsListEvent, ProductsListState> {
 
   ProductsListBloc(this._productsListUsecase)
       : super(LoadingProductsListState()) {
-    on<OnFetchingProductsListEvent>(_onFetchingProductsList);
+    on<FetchroductsListEvent>(_onFetchingProductsList);
   }
 
-  Future<void> _onFetchingProductsList(OnFetchingProductsListEvent event,
+  Future<void> _onFetchingProductsList(FetchroductsListEvent event,
       Emitter<ProductsListState> emitter) async {
     final productsList = await _productsListUsecase.call(null);
 
