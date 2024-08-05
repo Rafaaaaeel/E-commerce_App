@@ -5,6 +5,6 @@ import 'presentation/pages/search_product_page.dart';
 class SearchProductModule extends Module {
   @override
   List<ModularRoute> get routes => [
-        ChildRoute('/', child: (context, args) => const Searc~hProductPage()),
+        ChildRoute('/', child: (context, args) => const SearchProductPage()),
       ];
 }
