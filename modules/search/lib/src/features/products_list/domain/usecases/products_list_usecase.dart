@@ -1,9 +1,8 @@
-import '../../../../../../../../core/network/failure.dart';
+import 'package:core/core.dart';
 import 'package:dartz/dartz.dart';
+import 'package:search/src/features/products_list/domain/entity/products_list_entity.dart';
+import 'package:search/src/features/products_list/domain/repositories/products_list_repository.dart';
 
-import '../../../../../../../../core/usecase/usecase.dart';
-import '../entity/products_list_entity.dart';
-import '../repositories/products_list_repository.dart';
 
 class ProductsListUsecase implements Usecase<ProductsListEntity, void> {
   final ProductsListRepository _repository;

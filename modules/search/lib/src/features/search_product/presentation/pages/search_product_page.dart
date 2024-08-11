@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../../../../../uikit/src/atoms/uikit_textfield_widget.dart';
+import 'package:uikit/uikit.dart';
 
 class SearchProductPage extends StatelessWidget {
   const SearchProductPage({super.key});
@@ -16,7 +15,7 @@ class SearchProductPage extends StatelessWidget {
               children: [
                 UikitTextfieldWidget.standard(
                   controller: TextEditingController(),
-                  hintText: "Looking for something?",
+                  hintText: "search:search_1".v(),
                 ),
               ],
             ),
@@ -24,5 +23,13 @@ class SearchProductPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+extension Strings on String {
+  String v({String? fallback, List<String>? params}) {
+    // dynamic value =
+
+    return "text";
   }
 }

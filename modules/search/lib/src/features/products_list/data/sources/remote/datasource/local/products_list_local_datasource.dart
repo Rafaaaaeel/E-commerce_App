@@ -1,10 +1,10 @@
 import 'dart:convert';
 
+import 'package:core/core.dart';
 import 'package:dartz/dartz.dart';
+import 'package:search/src/features/products_list/data/models/products_list_models.dart';
+import 'package:search/src/features/products_list/data/sources/remote/datasource/products_list_datasource.dart';
 
-import '../../../../../../../../../../../core/network/failure.dart';
-import '../../../../models/products_list_models.dart';
-import '../products_list_datasource.dart';
 
 class ProductsListLocalDatasource implements ProductsListDatasource {
   @override

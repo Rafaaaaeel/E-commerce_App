@@ -8,7 +8,7 @@
             "name": "E-commerce App",
             "request": "launch",
             "type": "dart",
-            "program": "app/main.dart",
+            "program": "app/lib/main.dart",
             "args": [
                 "--dart-define=env=prod", 
             ]
@@ -16,7 +16,7 @@
         {
             "name": "E-commerce App Mock",
             "request": "launch",
-            "program": "app/main.dart",
+            "program": "app/lib/main.dart",
             "type": "dart",
             "args": [
                 "--dart-define=env=mock", 
