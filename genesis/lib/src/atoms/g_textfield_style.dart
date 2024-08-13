@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:genesis/src/genesis.dart';
 
-import '../uikit.dart';
 
-class UikitTextfieldStyle {
+class GTextfieldStyle {
   final BorderRadius borderRadius;
 
   final InputBorder border;
@@ -13,7 +13,7 @@ class UikitTextfieldStyle {
 
   final Color? backgroundColor;
 
-  UikitTextfieldStyle({
+  GTextfieldStyle({
     required this.borderRadius,
     required this.border,
     this.cursorColor,
@@ -21,9 +21,9 @@ class UikitTextfieldStyle {
     this.backgroundColor,
   });
 
-  static UikitTextfieldStyle standard() {
-    return UikitTextfieldStyle(
-      borderRadius: Uikit().radius.r_8,
+  static GTextfieldStyle standard() {
+    return GTextfieldStyle(
+      borderRadius: Genesis().radius.r_8,
       border: InputBorder.none,
       cursorColor: Colors.black,
       backgroundColor: Colors.grey[200],

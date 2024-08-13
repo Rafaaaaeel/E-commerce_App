@@ -1,7 +1,5 @@
+import 'package:core/core.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
-import 'package:core/src/utils/localize.dart';
-
 
 class AppController extends Disposable {
   AppController() {
@@ -9,9 +7,7 @@ class AppController extends Disposable {
       "search",
     ]);
   }
-  
-  @override
-  void dispose() {
-  }
 
+  @override
+  void dispose() {}
 }

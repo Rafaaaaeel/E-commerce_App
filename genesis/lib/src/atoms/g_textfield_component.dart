@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:genesis/src/genesis.dart';
 
-import '../uikit.dart';
-import 'uikit_textfield_style.dart';
 
-class UikitTextfieldComponent extends StatefulWidget {
+import 'g_textfield_style.dart';
+
+class GTextfieldComponent extends StatefulWidget {
   final String? hintText;
 
   final TextEditingController controller;
 
-  final UikitTextfieldStyle styles;
+  final GTextfieldStyle styles;
 
-  const UikitTextfieldComponent(
+  const GTextfieldComponent(
       {super.key,
       required this.controller,
       required this.styles,
       this.hintText});
 
   @override
-  State<UikitTextfieldComponent> createState() => _UikitTextfieldWidgetState();
+  State<GTextfieldComponent> createState() => _UikitTextfieldWidgetState();
 }
 
-class _UikitTextfieldWidgetState extends State<UikitTextfieldComponent> {
+class _UikitTextfieldWidgetState extends State<GTextfieldComponent> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +30,7 @@ class _UikitTextfieldWidgetState extends State<UikitTextfieldComponent> {
         borderRadius: widget.styles.borderRadius,
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Uikit().sizes.m_16),
+        padding: EdgeInsets.symmetric(horizontal: Genesis().sizes.m_16),
         child: TextField(
           controller: widget.controller,
           cursorColor: widget.styles.cursorColor,

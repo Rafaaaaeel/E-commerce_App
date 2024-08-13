@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 import 'package.dart';
 
@@ -42,24 +42,48 @@ class Localize {
 
   void setup({
     List<String>? packagesLoaded,
-  }) {
+  }) async {
     if (packagesLoaded?.isNotEmpty ?? false) {
-      packagesLoaded!.forEach((p) {
-        String path = _assetPath(p, _activeLocale!);
-    
-        String jsonContent = File(path).readAsStringSync();
+      List<Package> packages = [];
 
-        Map<String, dynamic> data = jsonDecode(jsonContent);
-        
-        print(data);
+      await Future.forEach(packagesLoaded!, (p) async {
+        String path = _assetPath(p, _activeLocale!);
+
+        String jsonString = await rootBundle.loadString(path);
+
+        Map<String, dynamic> data = jsonDecode(jsonString);
+
+        packages.add(Package(name: p, data: data));
       });
+
+      this.packagesLoaded = packages;
     }
   }
 
   String _assetPath(String package, Locale locale) =>
       "packages/$package/lang/${locale.toString()}.json";
 
-  dynamic getValue(String key, String value) {
-    Package selectecPackaged = _packagesLoaded.firstWhere((p) => p.name == key);
+  dynamic getValue(String content) {
+    if (content.contains(':')) {
+      final key = content.split(":").first;
+
+      Package package = _packagesLoaded.firstWhere((p) => p.name == key);
+
+      final String value = content.split(":").last;
+
+      return package.data[value];
+    }
+  }
+}
+
+extension LocalizeStrings on String {
+  String v({String? fallback, List<String>? params}) {
+    dynamic value = Localize.shared.getValue(this);
+
+    if (value is! String) {
+      return fallback ?? "[NOT FOUND]";
+    }
+
+    return value;
   }
 }
