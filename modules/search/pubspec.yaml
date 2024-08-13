@@ -27,5 +27,9 @@ dependencies:
   #Modules
   core:
     path: ../../shared
-  uikit:
-    path: ../../uikit
+  genesis:
+    path: ../../genesis
+
+flutter:
+  assets:
+    - lang/

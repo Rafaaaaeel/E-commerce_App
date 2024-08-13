@@ -1,5 +1,6 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:uikit/uikit.dart';
+import 'package:genesis/genesis.dart';
 
 class SearchProductPage extends StatelessWidget {
   const SearchProductPage({super.key});
@@ -13,7 +14,7 @@ class SearchProductPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               children: [
-                UikitTextfieldWidget.standard(
+                GTextfieldWidget.standard(
                   controller: TextEditingController(),
                   hintText: "search:search_1".v(),
                 ),
@@ -23,13 +24,5 @@ class SearchProductPage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-extension Strings on String {
-  String v({String? fallback, List<String>? params}) {
-    // dynamic value =
-
-    return "text";
   }
 }
