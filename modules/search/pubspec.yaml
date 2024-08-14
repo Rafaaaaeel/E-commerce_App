@@ -27,8 +27,6 @@ dependencies:
   #Modules
   core:
     path: ../../shared
-  genesis:
-    path: ../../genesis
 
 flutter:
   assets:

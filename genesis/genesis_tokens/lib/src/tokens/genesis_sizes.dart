@@ -1,4 +1,4 @@
-class Genesisizes {
+class GenesisSizes {
   double get zero => 0;
   double get one => 1;
   double get two => 2;

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genesis/src/genesis.dart';
-
+import 'package:genesis_tokens/tokens.dart';
 
 import 'g_textfield_style.dart';
 
@@ -30,7 +29,7 @@ class _UikitTextfieldWidgetState extends State<GTextfieldComponent> {
         borderRadius: widget.styles.borderRadius,
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Genesis().sizes.m_16),
+        padding: EdgeInsets.symmetric(horizontal: GTheme().sizes.m_16),
         child: TextField(
           controller: widget.controller,
           cursorColor: widget.styles.cursorColor,

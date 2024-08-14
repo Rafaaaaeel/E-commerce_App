@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:genesis/genesis.dart';
+import 'package:search/src/features/search_product/presentation/widgets/blue_header_widget.dart';
 
 class SearchProductPage extends StatelessWidget {
   const SearchProductPage({super.key});
@@ -18,6 +18,7 @@ class SearchProductPage extends StatelessWidget {
                   controller: TextEditingController(),
                   hintText: "search:search_1".v(),
                 ),
+                BlueHeaderWidget(),
               ],
             ),
           ),

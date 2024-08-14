@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genesis/src/genesis.dart';
-
+import 'package:genesis_tokens/tokens.dart';
 
 class GTextfieldStyle {
   final BorderRadius borderRadius;
@@ -23,7 +22,7 @@ class GTextfieldStyle {
 
   static GTextfieldStyle standard() {
     return GTextfieldStyle(
-      borderRadius: Genesis().radius.r_8,
+      borderRadius: GTheme().radius.r_8,
       border: InputBorder.none,
       cursorColor: Colors.black,
       backgroundColor: Colors.grey[200],
